@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#071a36">
+<title>RAYOTSAVA 2026 | Inter-College Championship</title>
+<style>
+:root{
+  --n:#071a36;--n2:#102c50;--g:#e8b84d;--g2:#ffe4a3;
+  --c:#fff6df;--m:#c9d3e4;--line:rgba(232,184,77,.4);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{margin:0;background:#06152d;color:var(--c);font:16px/1.5 Inter,Segoe UI,Arial,sans-serif}
+img{max-width:100%}
+
+/* HERO + INSTITUTION LOGOS */
+.hero{
+  min-height:490px;padding:22px 20px 52px;text-align:center;position:relative;
+  overflow:hidden;background:
+  radial-gradient(ellipse at 50% 100%,#75432266,transparent 48%),
+  linear-gradient(135deg,#051227,#102e55);
+  border-bottom:2px solid var(--g);
+}
+.hero:before{
+  content:"";position:absolute;inset:12px;border:1px solid #e8b84d66;
+  border-radius:10px;pointer-events:none;
+}
+.top{
+  width:min(100%,1100px);margin:0 auto;display:grid;
+  grid-template-columns:100px minmax(0,1fr) 100px;
+  align-items:center;gap:18px;position:relative;z-index:1;
+}
+.top-brand{
+  width:100px;height:100px;display:flex;align-items:center;justify-content:center;
+  padding:7px;background:rgba(255,255,255,.97);border:1px solid var(--g);
+  border-radius:16px;box-shadow:0 5px 20px #0005;overflow:hidden;
+}
+.top-brand img{
+  display:block;width:100%;height:100%;object-fit:contain;object-position:center;
+}
+.top-center{
+  min-width:0;text-align:center;color:var(--g2);font-weight:800;
+  letter-spacing:.12em;font-size:clamp(.82rem,1.7vw,1.08rem);
+  line-height:1.35;
+}
+.top-center small{
+  display:block;margin-top:5px;color:var(--m);font-size:.78em;
+  letter-spacing:.08em;font-weight:600;
+}
+.hero-inner{position:relative;z-index:1;margin:18px auto 0;max-width:1000px}
+.event-image-wrap{width:min(420px,88vw);aspect-ratio:3/2;height:auto;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;}
+.event-image{display:block;width:100%;height:100%;max-width:none;object-fit:contain;object-position:center;filter:drop-shadow(0 7px 12px #0008)}
+.eyebrow{color:var(--g2);letter-spacing:.28em;text-transform:uppercase;font-size:.8rem;font-weight:700}
+h1{
+  font:clamp(3rem,10vw,7rem)/.98 Georgia,serif;color:#f6cc70;
+  text-shadow:0 4px 0 #6f3b10,0 9px 24px #000;margin:16px 0 8px;letter-spacing:.03em;
+}
+.year{font:clamp(2rem,5vw,3.2rem) Georgia,serif;letter-spacing:.2em;color:#ffe6a8}
+.ribbon{
+  display:inline-block;margin:20px auto 12px;padding:9px 24px;
+  border:1px solid var(--g2);background:linear-gradient(90deg,#8c531d,#f4d17e,#8c531d);
+  color:#241609;font-family:Georgia,serif;font-weight:800;letter-spacing:.1em;
+}
+.tag{color:var(--g2);letter-spacing:.16em;font-weight:700}
+.date{font-size:1.15rem;font-weight:800;margin-top:22px}
+
+/* NAVIGATION */
+.nav{
+  position:sticky;top:0;z-index:5;background:#051227f2;border-bottom:1px solid var(--line);
+  display:flex;gap:8px;overflow-x:auto;padding:11px max(16px,calc((100% - 1080px)/2));
+  scrollbar-width:thin;
+}
+.nav a{
+  white-space:nowrap;text-decoration:none;color:var(--m);padding:7px 12px;
+  border-radius:20px;border:1px solid transparent;font-size:.88rem;flex:0 0 auto;
+}
+.nav a:hover,.nav a:focus-visible{border-color:var(--line);color:var(--g2)}
+
+/* EVENT CONTENT */
+main{max-width:1100px;margin:auto;padding:44px 20px 70px}
+.intro{text-align:center;margin-bottom:30px}
+.intro h2{font:2.3rem Georgia,serif;color:var(--g2);margin:0 0 8px}
+.intro p{color:var(--m);margin:0}
+.category{margin:38px 0;scroll-margin-top:82px}
+.cathead{display:flex;align-items:center;gap:12px;margin-bottom:15px;min-width:0}
+.ico{width:104px;height:104px;flex:0 0 104px;border:1px solid var(--g);
+  border-radius:14px;overflow:hidden;display:grid;place-items:center;
+  background:linear-gradient(145deg,#17375f,#081a35);box-shadow:0 6px 18px #0005;
+}
+.ico img{display:block;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center}
+.ico.image-missing::after{content:"ADD IMAGE";color:var(--g2);font-size:.62rem;font-weight:800;letter-spacing:.08em;text-align:center;padding:4px}
+.cathead h3{font:1.5rem/1.2 Georgia,serif;color:var(--g2);margin:0}
+.cathead p{margin:4px 0 0;color:var(--m);font-size:.88rem}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.card{
+  min-width:0;background:linear-gradient(145deg,#123054,#071831);
+  border:1px solid var(--line);border-radius:15px;padding:18px;min-height:160px;
+  display:flex;flex-direction:column;box-shadow:0 10px 25px #0003;
+}
+.card h4{margin:0 0 7px;color:#fff0ca;font-size:1.08rem}
+.card p{margin:0 0 17px;color:var(--m);font-size:.9rem;flex:1}
+.reg{
+  border:0;border-radius:9px;padding:10px 14px;
+  background:linear-gradient(110deg,#e9b64d,#ffe2a0);color:#251706;
+  font-weight:800;font-size:.9rem;cursor:pointer;transition:transform .18s,filter .18s;
+}
+.reg:hover{filter:brightness(1.08);transform:translateY(-1px)}
+footer{text-align:center;padding:28px 16px;background:#041126;border-top:1px solid var(--line)}
+footer strong{color:var(--g2);letter-spacing:.13em}
+footer p{color:var(--m);font-size:.88rem;margin:7px}
+
+/* REGISTRATION MODAL */
+.backdrop{
+  display:none;position:fixed;inset:0;z-index:20;background:#000b;
+  align-items:center;justify-content:center;padding:20px;
+}
+.backdrop.show{display:flex}
+.modal{
+  max-width:420px;width:100%;background:#0b2344;border:1px solid var(--g);
+  border-radius:16px;padding:25px;text-align:center;box-shadow:0 18px 60px #0008;
+}
+.modal h3{font:1.5rem Georgia,serif;color:var(--g2);margin:0 0 8px}
+.modal p{color:var(--m)}
+.close{
+  background:transparent;color:var(--c);border:1px solid var(--line);
+  border-radius:8px;padding:9px 18px;cursor:pointer;
+}
+
+/* TABLET */
+@media(max-width:800px){
+  .top{grid-template-columns:82px minmax(0,1fr) 82px;gap:12px}
+  .top-brand{width:82px;height:82px;border-radius:13px;padding:6px}
+  .hero-inner{margin-top:30px}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  main{padding-top:38px}
+}
+
+/* MOBILE */
+@media(max-width:560px){
+  .hero{min-height:0;padding:16px 13px 38px}
+  .hero:before{inset:7px}
+  .top{grid-template-columns:58px minmax(0,1fr) 58px;gap:7px}
+  .top-brand{width:58px;height:58px;padding:4px;border-radius:10px}
+  .top-center{font-size:.68rem;letter-spacing:.055em;line-height:1.3}
+  .top-center small{font-size:.62rem;letter-spacing:.025em;margin-top:4px}
+  .hero-inner{margin-top:14px}
+  .event-image-wrap{width:min(310px,86vw);height:auto;aspect-ratio:3/2;margin:0 auto 6px}
+  .eyebrow{font-size:.65rem;letter-spacing:.18em}
+  h1{font-size:clamp(2.65rem,13vw,4.2rem);margin:13px 0 6px}
+  .year{font-size:2rem}
+  .ribbon{font-size:.72rem;letter-spacing:.055em;padding:8px 12px;margin:15px auto 10px}
+  .tag{font-size:.68rem;letter-spacing:.08em}
+  .date{font-size:1rem;margin-top:17px}
+  .hero-inner>p{font-size:.88rem;margin:8px auto 0;max-width:290px}
+  .nav{padding:9px 12px;gap:5px}
+  .nav a{font-size:.78rem;padding:7px 10px}
+  main{padding:30px 14px 50px}
+  .intro{margin-bottom:24px}
+  .intro h2{font-size:1.9rem}
+  .intro p{font-size:.86rem}
+  .category{margin:30px 0;scroll-margin-top:65px}
+  .cathead{gap:10px;margin-bottom:12px}
+  .ico{width:82px;height:82px;flex:0 0 82px;border-radius:12px}
+  .cathead h3{font-size:1.22rem}
+  .cathead p{font-size:.78rem;line-height:1.35}
+  .cards{grid-template-columns:1fr;gap:11px}
+  .card{padding:15px;min-height:0;border-radius:13px}
+  .card h4{font-size:1rem}
+  .card p{font-size:.86rem;margin-bottom:13px}
+  .reg{padding:10px 13px;font-size:.86rem}
+}
+
+/* VERY SMALL PHONES */
+@media(max-width:360px){
+  .event-image-wrap{width:min(280px,88vw);aspect-ratio:3/2;margin-bottom:5px}
+  .top{grid-template-columns:50px minmax(0,1fr) 50px;gap:5px}
+  .top-brand{width:50px;height:50px;padding:3px}
+  .top-center{font-size:.61rem}
+  .top-center small{font-size:.57rem}
+  .ico{width:72px;height:72px;flex-basis:72px}
+  .cathead h3{font-size:1.12rem}
+}
+</style>
+</head>
+<body>
+<header class="hero" id="top">
+  <div class="top">
+    <div class="top-brand"><img id="kleLogo" src="KLE.png" alt="KLE Society logo"></div>
+    <div class="top-center">K.L.E. SOCIETY'S<br>
+      Shri. Rajashekharappa Pampanna Mastar Hoskeri College<br>
+Bachelor Of Computer Applications
+
+<small>(Affiliated to Koppal University, Koppal)<br>
+Vaddarahatti, Gangavathi – 583235</small></div>
+    <div class="top-brand"><img id="bcaLogo" src="BCA.png" alt="BCA logo"></div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="event-image-wrap"><img class="event-image" id="eventImage" src="cen.png" alt="Rayotsava event image"></div>
+    <div class="eyebrow">BCA Department Presents</div>
+    <div class="year">2026</div>
+    <div class="ribbon">INTER-COLLEGE CHAMPIONSHIP</div>
+    <div class="tag">LEGACY ◆ INTELLIGENCE ◆ VICTORY</div>
+    <div class="date">21 NOVEMBER 2026</div>
+    <p>Explore the events. Choose your challenge. Register to participate.</p>
+  </div>
+</header>
+
+<nav class="nav">
+  <a href="#egaming">E-Gaming</a><a href="#quiz">Quiz & Brain Games</a>
+  <a href="#arts">Fine Arts</a><a href="#lifestyle">Lifestyle</a>
+  <a href="#cultural">Cultural</a><a href="#sports">Sports</a>
+</nav>
+
+<main>
+  <div class="intro"><h2>Explore the Events</h2><p>Select an event and click Register. Registration forms will open when links are added.</p></div>
+
+  <section class="category" id="egaming">
+    <div class="cathead"><div class="ico"><img src="1.png" alt="E-Gaming Events"></div><div><h3>E-Gaming Events</h3><p>Digital games, strategy and competition</p></div></div>
+    <div class="cards">
+      <article class="card"><h4>Ludo</h4><p>Challenge your opponents with strategy and a little luck.</p><button class="reg" data-event="Ludo">Register →</button></article>
+      <article class="card"><h4>Free Fire</h4><p>Battle royale competition. Match details will be shared by the organisers.</p><button class="reg" data-event="Free Fire">Register →</button></article>
+      <article class="card"><h4>PUBG Mobile</h4><p>Show your survival skills and compete for the top spot.</p><button class="reg" data-event="PUBG Mobile">Register →</button></article>
+    </div>
+  </section>
+
+  <section class="category" id="quiz">
+    <div class="cathead"><div class="ico"><img src="2.png" alt="Quiz and Brain Games"></div><div><h3>Quiz & Brain Games</h3><p>Test your knowledge, logic and observation</p></div></div>
+    <div class="cards">
+      <article class="card"><h4>Funny Quiz</h4><p>Entertaining questions, unexpected answers and quick thinking.</p><button class="reg" data-event="Funny Quiz">Register →</button></article>
+      <article class="card"><h4>Logical Quiz</h4><p>Test your reasoning, patterns and problem-solving skills.</p><button class="reg" data-event="Logical Quiz">Register →</button></article>
+      <article class="card"><h4>Guess It</h4><p>Identify logos, music, dialogues, memes and movies from clues.</p><button class="reg" data-event="Guess It">Register →</button></article>
+    </div>
+  </section>
+
+  <section class="category" id="arts">
+    <div class="cathead"><div class="ico"><img src="3.png" alt="Fine Arts and Creative Events"></div><div><h3>Fine Arts & Creative Events</h3><p>Bring your imagination to life</p></div></div>
+    <div class="cards">
+      <article class="card"><h4>Pencil Sketch</h4><p>Showcase your drawing and shading skills.</p><button class="reg" data-event="Pencil Sketch">Register →</button></article>
+      <article class="card"><h4>Face Painting</h4><p>Transform a face into a creative canvas.</p><button class="reg" data-event="Face Painting">Register →</button></article>
+      <article class="card"><h4>Rangoli</h4><p>Create colourful designs with precision and creativity.</p><button class="reg" data-event="Rangoli">Register →</button></article>
+      <article class="card"><h4>Colour Painting</h4><p>Express your ideas through colour and composition.</p><button class="reg" data-event="Colour Painting">Register →</button></article>
+    </div>
+  </section>
+
+  <section class="category" id="lifestyle">
+    <div class="cathead"><div class="ico"><img src="4.png" alt="Lifestyle and Creative Skills"></div><div><h3>Lifestyle & Creative Skills</h3><p>Personal creativity, styling and practical skills</p></div></div>
+    <div class="cards">
+      <article class="card"><h4>Mehendi</h4><p>Display your intricate patterns and design skills.</p><button class="reg" data-event="Mehendi">Register →</button></article>
+      <article class="card"><h4>Hairstyling</h4><p>Create a distinctive look with your styling skills.</p><button class="reg" data-event="Hairstyling">Register →</button></article>
+      <article class="card"><h4>Fireless Cooking</h4><p>Prepare a creative dish without using fire.</p><button class="reg" data-event="Fireless Cooking">Register →</button></article>
+      <article class="card"><h4>Makeup</h4><p>Show your creativity through makeup artistry.</p><button class="reg" data-event="Makeup">Register →</button></article>
+    </div>
+  </section>
+
+  <section class="category" id="cultural">
+    <div class="cathead"><div class="ico"><img src="5.png" alt="Cultural and Performing Arts"></div><div><h3>Cultural & Performing Arts</h3><p>Celebrate talent on stage</p></div></div>
+    <div class="cards">
+      <article class="card"><h4>Solo Dance</h4><p>Own the stage with an individual performance.</p><button class="reg" data-event="Solo Dance">Register →</button></article>
+      <article class="card"><h4>Group Dance</h4><p>Bring your team together through choreography.</p><button class="reg" data-event="Group Dance">Register →</button></article>
+      <article class="card"><h4>Solo Singing</h4><p>Showcase your voice and musical expression.</p><button class="reg" data-event="Solo Singing">Register →</button></article>
+      <article class="card"><h4>Group Singing</h4><p>Perform together and create musical harmony.</p><button class="reg" data-event="Group Singing">Register →</button></article>
+    </div>
+  </section>
+
+  <section class="category" id="sports">
+    <div class="cathead"><div class="ico"><img src="6.png" alt="Sports and Outdoor Games"></div><div><h3>Sports & Outdoor Games</h3><p>Teamwork, strength and sportsmanship</p></div></div>
+    <div class="cards">
+      <article class="card"><h4>Box Cricket</h4><p>Bring your batting, bowling and team strategy.</p><button class="reg" data-event="Box Cricket">Register →</button></article>
+      <article class="card"><h4>Volleyball</h4><p>Compete with coordination, skill and teamwork.</p><button class="reg" data-event="Volleyball">Register →</button></article>
+      <article class="card"><h4>Throwball</h4><p>Show your speed, accuracy and team spirit.</p><button class="reg" data-event="Throwball">Register →</button></article>
+      <article class="card"><h4>Tug of War</h4><p>Work together and pull your team to victory.</p><button class="reg" data-event="Tug of War">Register →</button></article>
+    </div>
+  </section>
+</main>
+
+<footer><strong>RAYOTSAVA 2026</strong><p>K.L.E. Society’s BCA Department, Gangavathi</p><p>21 November 2026 | Legacy ◆ Intelligence ◆ Victory</p></footer>
+
+<div class="backdrop" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal"><h3 id="modal-title">Registration link pending</h3><p id="modal-message">The Google Form link for this event will be added soon.</p><button class="close" id="close">Close</button></div>
+</div>
+
+<script>
+/*
+  IMAGE FILES:
+  - KLE.png : KLE logo (top-left)
+  - BCA.png : BCA logo (top-right)
+  - 1.png to 6.png : category images in the six event sections
+  - Replace ADD_EVENT_IMAGE_URL_HERE with an event emblem URL, or remove
+    the event-image-wrap element if you do not want an emblem above the title.
+
+  Keep these image files in the same folder as this HTML file,
+  or replace the src values with full image URLs.
+*/
+const registrationLinks={
+  "Ludo":"","Free Fire":"","PUBG Mobile":"","Funny Quiz":"","Logical Quiz":"","Guess It":"",
+  "Pencil Sketch":"","Face Painting":"","Rangoli":"","Colour Painting":"","Mehendi":"",
+  "Hairstyling":"","Fireless Cooking":"","Makeup":"","Solo Dance":"","Group Dance":"",
+  "Solo Singing":"","Group Singing":"","Box Cricket":"","Volleyball":"","Throwball":"","Tug of War":""
+};
+
+const modal=document.getElementById("modal");
+const msg=document.getElementById("modal-message");
+
+document.querySelectorAll(".ico img").forEach(img=>{
+  img.addEventListener("error",()=>{
+    img.style.display="none";
+    img.parentElement.classList.add("image-missing");
+  },{once:true});
+});
+
+document.querySelectorAll("[data-event]").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const name=btn.dataset.event;
+    const url=registrationLinks[name];
+    if(url && url.trim()){
+      window.open(url,"_blank","noopener,noreferrer");
+    }else{
+      document.getElementById("modal-title").textContent=name+" Registration";
+      msg.textContent="The Google Form link for "+name+" has not been added yet. Please check again later.";
+      modal.classList.add("show");
+    }
+  });
+});
+document.getElementById("close").addEventListener("click",()=>modal.classList.remove("show"));
+modal.addEventListener("click",e=>{if(e.target===modal)modal.classList.remove("show")});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")modal.classList.remove("show")});
+</script>
+</body>
+</html>
